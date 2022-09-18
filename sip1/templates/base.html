@@ -31,11 +31,12 @@
         <a class="navbar-brand" href="{% url 'inicio' %}">
             <img src="{% static 'assets/logo-notti.jpg' %}" alt="" width="60" height="40">
           </a>
-        <a class="navbar-brand" href="{% url 'inicio' %}">Servicio de Nutrición Infantil</a>
+        <!-- <a class="navbar-brand" href="{% url 'inicio' %}">Servicio de Nutrición Infantil</a> -->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
                 <li class=""><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+                <li class=""><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
                 
             </ul>
         </div>
@@ -73,6 +74,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
   <script src="{% static 'js/scripts.js' %}"></script>
+  <script src="{% static 'js/gestionEliminar.js' %}"></script>
 
   <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 

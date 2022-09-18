@@ -15,6 +15,7 @@ urlpatterns = [
     path('pacientes/editar', views.editar, name='editar'),
     path('eliminar/<int:id>', views.eliminar, name='eliminar'),
     path('editar/<int:id>', views.editar, name='editar'),
+    path('cerrar_sesion',views.cerrar_sesion, name='cerrar_sesion'),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

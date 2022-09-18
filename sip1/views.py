@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Paciente
 from .forms import LibroForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 # Create your views here.
 
@@ -16,9 +18,7 @@ def nosotros(request):
 def publicaciones(request):
     return render(request,'paginas/publicaciones.html')
 
-def pacientes(request):
-    datospacientes = Paciente.objects.all()
-    return render(request,'pacientes/index.html', {'pacientes1': datospacientes})
+
 
 def crear(request):
     formulario = LibroForm(request.POST or None, request.FILES or None)
@@ -40,3 +40,13 @@ def eliminar(request, id):
     
     eliminarpaciente.delete()
     return redirect('pacientes')
+
+@login_required
+
+def pacientes(request):
+    datospacientes = Paciente.objects.all().order_by('habitacion')
+    return render(request,'pacientes/index.html', {'pacientes1': datospacientes})
+
+def cerrar_sesion(request):
+    logout(request)
+    return redirect('/')

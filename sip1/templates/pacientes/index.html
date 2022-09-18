@@ -23,7 +23,7 @@
                         <th scope="col">Foto</th>
                         <th scope="col">Diagnóstico</th>
                         <th scope="col">Comida</th>
-                        <th scope="col">Acciones</th>
+                        <th colspan="2">Acciones</th>
                         
                     </tr>
                 </thead>
@@ -43,9 +43,8 @@
                         <td>{{paci.diagnostico}}</td>
                         <td>{{paci.comida}}</td>
                         <td> 
-                            <a name="" id="" class="btn btn-info" href="{% url 'editar' paci.id %}" role="button">Editar</a>  
-                            |  
-                            <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' paci.id %}" role="button">Eliminar</a>
+                            <a name="" id="" class="btn btn-sm btn-info" href="{% url 'editar' paci.id %}" role="button">Editar</a>  
+                            <a name="" id="" class="btn btn-sm btn-danger btnEliminacion" href="{% url 'eliminar' paci.id %}" role="button">Eliminar</a>
                         
                         </td>
                         
@@ -61,9 +60,5 @@
     </div>
     
 </div>
-
-
-
-
 
 {% endblock%}
